@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header .candle-icon {
+    font-size: 2rem;
+    color: #ffcc00; /* Candle color */
+}
+
+.candle-shop {
+    display: flex;
+    flex-direction: column; /* Change to column for vertical alignment */
+    align-items: center; /* Center align items horizontally */
+    padding: 1rem;
+}
+
+.item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0; /* Adjust margin to fit vertical alignment */
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    padding: 1rem;
+    position: relative;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.item.lit {
+    animation: lightUp 0s, fadeOut 2s 0s forwards; /* Apply immediate light-up and gradual fade-out */
+}
+
+@keyframes lightUp {
+    0% {
+        background: white;
+        opacity: 1;
+    }
+    100% {
+        background: #f7f703; /* Light yellow to indicate lit */
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        background: #ffffe0; /* Light yellow */
+        opacity: 1;
+    }
+    100% {
+        background: white;
+        opacity: 0.5;
+    }
+}
+
+.item.candle.lit::before {
+    content: '🕯️'; /* Candle flame icon */
+    font-size: 1.5rem;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
